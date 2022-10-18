@@ -13,7 +13,21 @@ import {
 } from "@mui/material";
 import LoginTeacher from "./LoginTeacher";
 
-function Login() {
+const Login = (props) => {
+
+  const{
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    handleSignUp,
+    hasAccount,
+    setHasAccount,
+    emailError,
+    passwordError,
+  } = props;
+
   const [showteacher, setShowTeacher] = useState(false);
   const [showStudent, setShowStudent] = useState(true);
   const paperStyle = {
@@ -45,6 +59,8 @@ function Login() {
             <TextField
               label="Username"
               placeholder="Enter username"
+              value = {email}
+              onChange={(e) => setEmail(e.target.value)}
               fullWidth
               required
               sx={{ mb: 1 }}
@@ -53,6 +69,8 @@ function Login() {
               label="Password"
               placeholder="Enter password"
               type="password"
+              value = {password}
+              onChange={(e) => setPassword(e.target.value)}
               fullWidth
               required
             />
@@ -97,6 +115,6 @@ function Login() {
       {showteacher && <LoginTeacher showteacher={showteacher} />}
     </div>
   );
-}
+};
 
 export default Login;
