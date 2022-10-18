@@ -1,8 +1,8 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import withFirebaseAuth from 'react-with-firebase-auth'
-import firebaseConfig from './firebaseConfig';
-import {
+//import withFirebaseAuth from 'react-with-firebase-auth'
+import firebaseConfig from './FirebaseConfig';
+ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -12,8 +12,8 @@ import {
  const db = getFirestore();
  const auth = getAuth();
 
-
-const firebaseConfig = {
+ 
+const FirebaseConfig = {
     apiKey: "AIzaSyBe-ar7cubVO15RfSIuOOG9Nl2blnLeOA8",
     authDomain: "curiosity-d7220.firebaseapp.com",
     projectId: "curiosity-d7220",
@@ -21,7 +21,7 @@ const firebaseConfig = {
     messagingSenderId: "702597929577",
     appId: "1:702597929577:web:0f8894467fc496aecd20f8"
   };
-  const app = initializeApp(firebaseConfig);
+  const app = firebase.initializeApp(FirebaseConfig);
 
   const signUp = async (email, password) => {
     try {
@@ -55,13 +55,13 @@ const firebaseConfig = {
     }
    };
 
-   const signOut = async() => {
+ /*  const signOut = async() => {
     try {
     await signOut(auth)
     return true
     } catch (error) {
     return false
     }
-   };
+   }; */
 
   export default app; 
